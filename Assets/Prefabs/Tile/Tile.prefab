@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 6394496631534988188}
   - component: {fileID: 3468307269161624424}
   - component: {fileID: 7513450929077861008}
+  - component: {fileID: 1866287799545434391}
   m_Layer: 5
   m_Name: Tile
   m_TagString: Untagged
@@ -255,3 +256,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1866287799545434391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7999829063203298883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201583b86b5147c45a5fce7c15c3ff77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1785041680944199981}
+  bgImage: {fileID: 3468307269161624424}
+  correctColor: {r: 0.36862746, g: 0.5764706, b: 0.32156864, a: 1}
+  wrongPositionColor: {r: 0.7058824, g: 0.60784316, b: 0.21568628, a: 1}
+  notInWordColor: {r: 0.21568628, g: 0.21568628, b: 0.23529412, a: 1}
