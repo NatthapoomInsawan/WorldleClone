@@ -25,14 +25,14 @@ namespace WordleClone
         private void OnDisable()
         {
             foreach (var key in virtualKeyboardController.KeyboardButtons)
-                key.OnKeyboardClick -= UpdateTileController;
+                key.Value.OnKeyboardClick -= UpdateTileController;
         }
         public void Init()
         {
             virtualKeyboardController.Init();
 
             foreach (var key in virtualKeyboardController.KeyboardButtons)
-                key.OnKeyboardClick += UpdateTileController;
+                key.Value.OnKeyboardClick += UpdateTileController;
 
             randomWord = RandomWord();
             gameplayUIController.SetRandomWordText(randomWord);

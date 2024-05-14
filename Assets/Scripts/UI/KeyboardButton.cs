@@ -1,14 +1,14 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace WordleClone 
 {
     public class KeyboardButton : MonoBehaviour, INeedInitialization
     {
+        public string TextSignal { get; private set; }
         public event Action<string> OnKeyboardClick;
 
         [SerializeField] private Button button;
@@ -16,12 +16,20 @@ namespace WordleClone
 
         public void Init()
         {
-            var textSignal = textMeshPro.text;
+            TextSignal = textMeshPro.text.ToUpper();
 
             button.onClick.AddListener(() =>
             {
-                OnKeyboardClick?.Invoke(textSignal);
+                OnKeyboardClick?.Invoke(textMeshPro.text);
             });
+        }
+
+        public void ClickButton() 
+        {
+            //button.onClick.Invoke();
+            var pointerEvent = new PointerEventData(EventSystem.current); 
+            ExecuteEvents.Execute(gameObject, pointerEvent, ExecuteEvents.pointerEnterHandler); 
+            ExecuteEvents.Execute(gameObject, pointerEvent, ExecuteEvents.submitHandler);
         }
 
     }
