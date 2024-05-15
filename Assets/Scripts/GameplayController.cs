@@ -56,7 +56,7 @@ namespace WordleClone
                 if (guessCount == 6 || isGameOver) 
                 {
                     NotifyButtonStruct[] notifyButtons = { new NotifyButtonStruct("Yes", () => { SceneManager.LoadScene("Gameplay"); }),
-                                                           new NotifyButtonStruct("No", () => { gameplayUIController.CloseNotifyPanelUI(); }) };
+                                                           new NotifyButtonStruct("No", () => { gameplayUIController.CloseNotifyPanelUI(); Application.Quit(); }) };
 
                     gameplayUIController.OpenNotifyPanelUI("GAMEOVER",
                                                             $"The word is {randomWord} \n Guess count: {guessCount} \n Play agian?",
